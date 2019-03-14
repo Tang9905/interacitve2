@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+
+body{
+	background:black;
+	margin: 50px;
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+
+
+
+.box{
+	width: calc(calc(100vw - 160px) / 6);
+	height: 18vh;
+	background: #FF12A4;
+	float: left;
+	margin: 5px;
+
+}
+
+.box.inRow {
+	animation-name: aa;
+	animation-duration: 1s;
+
+}
+
+
+
+
+
+
+@keyframes aa{
+	0%,100%{background:#FF12A4;}
+
+	50%{background:black;}
+}
+
+
+
+
+.box.inColumn {
+	animation-name: bb;
+	animation-duration: 1s;
+	animation-fill-mode: backwards;
+
+
+}
+
+.x1.inRow, .x2.inRow {
+	animation-duration: 1ms;
+}
+
+.x3.inRow, .x4.inRow {
+	animation-duration: 2s;
+}
+.x5.inRow, .x6.inRow {
+	animation-duration: .1s;
+}
+.y1.inColumn, .y2.inColumn {
+	animation-duration: 500ms;
+
+}
+
+.y3.inColumn, .y4.inColumn {
+	animation-duration: 2s;
+}
+.y5.inColumn, .y6.inColumn {
+	animation-duration: 1s;
+}
+
+
+
+@keyframes bb{
+	0%, 100%{background:#FF12A4;}
+
+	50%{background:black;}
+}
+
+.box.inRow.inColumn {
+
+	background:#FF12A4 ;
+}
+
+
+
+
+.x
+
+.y
+
+</style>
+</head>
+<body>
+<div class="box x1 y1"></div> <div class="box x2 y1"></div> <div class="box x3 y1"></div> <div class="box x4 y1"></div> <div class="box x5 y1"></div> <div class="box x6 y1"></div> 
+<div class="box x1 y2"></div> <div class="box x2 y2"></div> <div class="box x3 y2"></div> <div class="box x4 y2"></div> <div class="box x5 y2"></div> <div class="box x6 y2"></div>
+<div class="box x1 y3"></div> <div class="box x2 y3"></div> <div class="box x3 y3"></div> <div class="box x4 y3"></div> <div class="box x5 y3"></div> <div class="box x6 y3"></div> 
+<div class="box x1 y4"></div> <div class="box x2 y4"></div> <div class="box x3 y4"></div> <div class="box x4 y4"></div> <div class="box x5 y4"></div> <div class="box x6 y4"></div>
+<div class="box x1 y5"></div> <div class="box x2 y5"></div> <div class="box x3 y5"></div> <div class="box x4 y5"></div> <div class="box x5 y5"></div> <div class="box x6 y5"></div> 
+
+
+
+
+
+<script type="text/javascript">
+	
+	let boxes = document.querySelectorAll('.box')
+
+	for(let counter = 0; counter < boxes.length; counter++){
+
+
+		
+
+
+
+		boxes[counter].addEventListener('mouseenter',function(){
+			let x = counter % 6 + 1
+			let y = Math.floor(counter / 6) + 1 
+
+			let row = document.querySelectorAll('.y' + y)
+			let column = document.querySelectorAll('.x' + x)
+
+
+			boxes[counter].style.animationDelay = '0ms'
+
+
+			let delayStep = 500
+
+
+			for(let i = 0; i < row.length; i++){
+				
+
+
+				if(i < x-1){
+					
+					let mul = x - i - 1
+					console.log('left' + mul)
+					let delay = mul * delayStep
+					row[i].style.animationDelay = delay + 'ms'
+					console.log(delay + 'ms')
+				}
+				if(i >= x){
+					let mul = i - x + 1
+					console.log('right' + mul)
+					let delay = mul * delayStep
+					row[i].style.animationDelay = delay + 'ms'
+				}
+
+				setTimeout(function(){
+					row[i].classList.add('inRow')	
+					row[i].addEventListener('animationend',function(){
+						row[i].classList.remove('inRow')
+					},{
+						once : true
+					})
+				},0)
+				
+				
+
+
+
+			}
+
+			for(let i = 0; i < column.length; i++){
+				
+
+				if(i < y-1){
+					let mul = y - i - 1
+					console.log('top' + mul)
+					let delay = mul * delayStep
+					column[i].style.animationDelay = delay + 'ms'
+					console.log(delay + 'ms')
+				}
+				if(i >= y){
+					
+					let mul = i - y +1
+					console.log('bottom' + mul)
+					let delay = mul * delayStep
+					column[i].style.animationDelay = delay + 'ms'
+				}
+				setTimeout(function(){
+					column[i].classList.add('inColumn')
+					column[i].addEventListener('animationend',function(){
+						column[i].classList.remove('inColumn')
+					},{
+						once : true
+					})
+				},0)
+				
+
+			}
+			
+			// console.log(x)
+			// console.log(y)
+
+		})
+
+		// boxes[counter].addEventListener('mouseleave',function(){
+		// 	let x = counter % 6 + 1
+		// 	let y = Math.floor(counter / 6) + 1
+
+		// 	let row = document.querySelectorAll('.y' + y)
+		// 	let column = document.querySelectorAll('.x' + x)
+
+		// 	for(let i = 0; i < row.length; i++){
+		// 		row[i].classList.remove('inRow')
+		// 	}
+
+		// 	for(let i = 0; i < column.length; i++){
+		// 		column[i].classList.remove('inColumn')
+		// 	}
+
+		// })
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
