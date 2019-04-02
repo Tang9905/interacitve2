@@ -1,0 +1,144 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=News+Cycle:700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Teko:500" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+
+
+
+<title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+
+
+<style>
+
+#clock{
+  position: absolute;
+  margin-right: 300px;
+  margin-left: 480px;
+  font-family: 'Libre Barcode 128', cursive;
+  font-size: 50pt;
+  margin-top: 257px;
+}
+
+#text{
+  position: absolute;
+  margin-left: 630px;
+ font-family: 'Teko', sans-serif;
+ font-size: 33pt;
+ margin-top: 250px;
+
+}
+
+.oops{
+  position: absolute;
+  margin-top: 370px;
+  margin-left: 600px;
+  color: red;
+  font-family: helvetica;
+}
+
+</style>
+</head>
+
+<body>
+<div id="clock">
+</div>
+
+
+<div id="text">
+  SECONDS LEFT BEFORE SPRING BREAK !!!!
+</div>
+
+<div class="oops"> Error250... \ I Know You Are Eager To Know But I Won't Tell You \
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+let clockEl = document.querySelector('#clock')
+let secondHand = document.querySelector('#secondHand')
+
+// run getTime once on load
+
+getTime();
+
+// call getTime every 1 second
+
+setInterval(function() {
+  getTime();
+}, 1000);
+
+
+
+
+// set up time getting function
+
+function getTime(){
+  
+  // get the date
+  
+  let d = new Date();
+
+  // get hours, minutes, and seconds
+  
+  let h = addZero(d.getHours());
+  let m = addZero(d.getMinutes());
+  let s = addZero(d.getSeconds());
+
+  // update the clock's text
+  
+  // let timeText = h + ":" + m + ":" + s
+  // clockEl.innerText = timeText
+
+  // rotate secondHand based on the second
+    
+
+  let startDate = new Date();
+  // Do your operations
+  let springBreak   = new Date(2019, 2, 22);
+  let seconds = Math.round((springBreak.getTime() - startDate.getTime()) / 1000)
+  console.log(seconds)
+  clockEl.innerText = seconds
+  
+  // detect a specific time
+  
+  // if(h < 19 && h > 16){
+  //  clockEl.classList.add('classTime');
+  // } else {
+  //  clockEl.classList.remove('classTime');
+  // }
+}
+
+// add a zero to times below 10
+
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+</script>
+</body>
+</html>

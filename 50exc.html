@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body{
+	background: black;
+}
+
+.box{
+	width: 200px;
+	height:150px;
+	background: pink;
+	position: relative;
+	margin-top: 100px;
+	margin-left:20vw;
+	transition: all 500ms ease; 
+	cursor: pointer;
+
+}
+
+#element-1:hover {
+	transform: rotate(45deg) scale(1.5);
+	
+}
+#element-2:hover {
+	transform: scale(1.5);
+	opacity:.3;
+	
+}
+#element-3:hover {
+	 transform: translateX(100px);
+	
+	
+}
+#element-4:hover {
+	 transform: translateY(50px);
+	
+	
+}
+#element-5:hover {
+	 animation-name: k;
+	 animation-duration: 2s;
+	
+}
+
+#element-6:hover {
+	 animation-name: k1;
+	 animation-duration: .3s;
+	
+}
+#element-7:hover {
+	 animation-name: k2;
+	 animation-duration: .5s;
+	
+}
+#element-8:hover {
+	 animation-name: r;
+	 animation-duration: .5s;
+	 transition: ease-in-out;
+	
+}
+#element-9:hover {
+	 animation-name: scaleIn;
+	 animation-duration: 3s;
+	 transition: ease-in-out;
+
+	
+}
+#element-10:hover {
+	 background: salmon;
+	 transform: rotate(360deg);
+	 transition: background 4s, transform 1s ease;
+	}
+
+#element-11{
+	
+	transition: transform 300ms ease-in-out ;
+
+}
+
+
+#element-12:hover {
+	 background: black;
+	
+	 transition: background .5s, ;
+	}
+
+#element-13:hover {
+	  animation-name: k3;
+	 animation-duration: .3s;
+	  
+	}
+
+#element-14:hover {
+	animation-name: aa;
+	animation-duration: 2s;
+}
+
+#element-15:hover {
+	background: white;
+	transition: background 2s;
+}
+
+#element-16:hover {
+	background: yellow;
+	transition: background 5s;
+}
+
+#element-17:hover {
+	background: blue;
+	transition: background 2s;
+}
+
+#element-18:hover {
+	border-radius: 300px;
+	transition: border-radius 2s;
+}
+
+#element-19:hover {
+	border-radius: 20px;
+	transition: border-radius 1s;
+}
+
+#element-20:hover {
+	background: blue;
+	transition: background 2s;
+}
+
+
+@keyframes k{
+	0%, 100%{transform: translateX(0px);}
+
+	50%{transform: translateX(-50px);}
+}
+
+@keyframes k1{
+	0%, 100%{transform: translateY(0px);}
+
+	50%{transform: translateY(-20px);}
+}
+@keyframes k2{
+	0%, 50%,100%{transform: translateY(0px);}
+
+	25%,75%{transform: translateY(20px);}
+}
+@keyframes r{
+	0%, 50%,100%{transform: rotate(0deg);}
+
+	25%,75%{transform: rotate(10deg);}
+}
+
+@keyframes scaleIn {
+    from {
+        height:150px;
+    }
+    to {
+        height:170px;
+    }
+
+@keyframes k3{
+	0%, 50%,100%{transform: translateY(0px);}
+
+	25%,75%{transform: translateY(80px);}
+}
+    
+@keyframes aa{
+	0%, 50%,100%{border-top: 100px}
+
+	25%,75%{border-top: 200px;}
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="box" id="element-1">
+  call me number 1
+</div>
+<div class="box" id="element-2">
+  call me number 2
+</div>
+<div class="box" id="element-3">
+  call me number 3
+</div>
+<div class="box" id="element-4">
+  call me number 4
+</div>
+<div class="box" id="element-5">
+  call me number 5
+</div>
+<div class="box" id="element-6">
+  call me number 6
+</div>
+<div class="box" id="element-7">
+  call me number 7
+</div>
+<div class="box" id="element-8">
+  call me number 8
+</div>
+<div class="box" id="element-9">
+  call me number 9
+</div>
+<div class="box" id="element-10">
+  call me number 10
+</div>
+<div class="box" id="element-11">
+  call me number 11
+</div>
+<div class="box" id="element-12">
+  call me number 12
+</div>
+<div class="box" id="element-13">
+  call me number 13
+</div>
+<div class="box" id="element-14">
+  call me number 14
+</div>
+<div class="box" id="element-15">
+  call me number 15
+</div>
+<div class="box" id="element-16">
+  call me number 16
+</div>
+<div class="box" id="element-17">
+  call me number 17
+</div>
+<div class="box" id="element-18">
+  call me number 18
+</div>
+<div class="box" id="element-19">
+  call me number 19
+</div>
+<div class="box" id="element-20">
+  call me number 20
+</div>
+
+
+</body>
+</html>
