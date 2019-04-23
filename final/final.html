@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+
+ body{
+ 	background-color: black;
+ 	 	
+padding: 0;
+margin:0;
+ }
+
+ .A{
+ 	position: absolute;
+ 	right: 420px;
+ 	top: 282px;
+ 	/*-webkit-animation: A 12s infinite;*/}
+
+  .N{
+ 	position: absolute;
+ 	right: 80px;
+ 	top: 282px;
+ 	}
+
+ .D{
+ 	position: absolute;
+ 	right: 390px;
+ 	top: 465px;
+ 	}
+
+  .Y{
+ 	position: absolute;
+ 	right: 105px;
+ 	top: 465px;
+
+ 	}
+   .CAM{
+ 	position: absolute;
+ 	right: 740px;
+ 	top: 785px;
+ 	;
+ 	}
+ 	.UP{
+ 	position: absolute;
+ 	right: 740px;
+ 	top: 820px;
+ 	}
+ 	.DOWN{
+ 	position: absolute;
+ 	right: 740px;
+ 	top: 855px;
+ 	}
+
+@-webkit-keyframes A {
+  0%, 100%  { -webkit-filter: hue-rotate(0deg); }
+  50% { -webkit-filter: hue-rotate(180deg); }
+}
+
+ .MM{
+ 	/*filter: hue-rotate(-10deg);*/
+ 	-webkit-animation: MM 12s infinite;
+ }
+
+ @-webkit-keyframes MM {
+  0%, 100%  { -webkit-filter:  hue-rotate(0deg) ; }
+  50% { -webkit-filter: hue-rotate(180deg) ; }
+}
+/*@-webkit-keyframes MM {
+  0%, 100%  { -webkit-filter: contrast(70%); }
+  50% { -webkit-filter: contrast(180%); }
+}
+*/
+
+
+#scrollBox {
+	width: 890px;
+	height:100vh;
+	overflow: auto;
+
+}
+
+
+
+@media print { 
+ .MM {
+
+ 	animation-play-state: paused;
+ }
+  .A, .N ,.D, .Y{ display: none !important; } 
+}
+
+</style>
+</head>
+
+
+<body>
+<div id="scrollBox">
+<a href="file:///Users/art/Desktop/interactive2/artwork1.html"><img src="mm.jpg" alt="mm" style="width:890px" class="MM" ></a>
+<a href="file:///Users/art/Desktop/interactive2/artwork1.html"><img src="mm2.png" alt="mm" style="width:1600px" class="MM"></a>
+<img src="mm.jpg" alt="mm" style="width:890px" class="MM">
+</div>
+<img src="a.png" alt="a" style="height:140px" class="A">
+<img src="n.png" alt="a" style="height:140px" class="N">
+<img src="d.png" alt="a" style="height:140px" class="D">
+<img src="y.png" alt="a" style="height:140px" class="Y">
+<img src="cam.png" alt="a" style="height:20px" class="CAM" onclick="window.print()">
+<img src="up.png" alt="a" style="height:12px" class="UP">
+<img src="down.png" alt="a" style="height:12px" class="DOWN">
+
+
+<script>
+
+
+let upButton = document.querySelector('.UP')
+let downButton = document.querySelector('.DOWN')
+
+
+upButton.addEventListener('click',function(){
+	scrollBox.scrollBy(0, -window.innerHeight)
+})
+
+downButton.addEventListener('click',function(){
+	scrollBox.scrollBy(0, window.innerHeight)
+})
+
+
+
+</script>
+
+
+</body>
+</html>
