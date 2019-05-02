@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+
+ body{
+ 	background-color: black;
+ 	 	
+padding: 0;
+margin:0;
+ }
+
+ .A{
+ 	position: absolute;
+ 	/*right: 420px;*/
+ 	/*top: 282px;*/
+
+  right:25vw;
+  
+  height:8.3vw;
+
+  top:calc(47.5vh - 8.3vw);
+  -webkit-animation: MM 12s infinite;
+
+ 	/*-webkit-animation: A 12s infinite;*/}
+
+  .N{
+ 	position: absolute;
+ 	/*right: 80px;
+ 	top: 282px;*/
+  right:5.5vw;
+  
+  height:8.3vw;
+
+  top:calc(47.5vh - 8.3vw);
+  -webkit-animation: MM 12s infinite;
+ 	}
+
+ .D{
+ 	position: absolute;
+ 	right: 390px;
+ 	top: 465px;
+
+  right:23vw;
+  
+  height:8.3vw;
+
+  top:52.5vh;
+  -webkit-animation: MM 12s infinite;
+
+ 	}
+
+  .Y{
+ 	position: absolute;
+ 	/*right: 105px;
+ 	top: 465px;*/
+  right:7vw;
+  
+  height:8.3vw;
+
+  top:calc(52.5vh);
+  -webkit-animation: MM 12s infinite;
+
+ 	}
+   .CAM{
+ 	position: absolute;
+ 	/*right: 740px;*/
+ 	/*top: 785px;*/
+  right: calc(50vw - 52px);
+  bottom:70px;
+  -webkit-animation: MM 12s infinite;
+ 	;
+ 	}
+ 	.UP{
+ 	position: absolute;
+ 	right: calc(50vw - 50px);
+  bottom:45px;
+  -webkit-animation: MM 12s infinite;
+ 	}
+ 	.DOWN{
+ 	position: absolute;
+ 	right: calc(50vw - 50px);
+ 	/*top: 855px;*/
+  bottom:20px;
+  -webkit-animation: MM 12s infinite;
+ 	}
+
+@-webkit-keyframes A {
+  0%, 100%  { -webkit-filter: hue-rotate(0deg); }
+  50% { -webkit-filter: hue-rotate(180deg); }
+}
+
+ .MM{
+ 	/*filter: hue-rotate(-10deg);*/
+ 	-webkit-animation: MM 12s infinite;
+
+
+
+height:100vh;
+width:50vw;
+object-fit: cover;
+object-position: center center;
+
+
+
+ }
+
+ @-webkit-keyframes MM {
+  0%, 100%  { -webkit-filter:  hue-rotate(0deg) ; }
+  50% { -webkit-filter: hue-rotate(180deg) ; }
+}
+/*@-webkit-keyframes MM {
+  0%, 100%  { -webkit-filter: contrast(70%); }
+  50% { -webkit-filter: contrast(180%); }
+}
+*/
+
+
+#scrollBox {
+	width: 890px;
+	height:100vh;
+	overflow: auto;
+  opacity: 1;
+  transition: 0.3s;
+
+}
+
+#scrollBox:hover {opacity: 0.85}
+
+@media print { 
+ .MM {
+  width:890px;
+  height:100vh;
+ 	animation-play-state: paused;
+ }
+  .A, .N ,.D, .Y, .UP, .DOWN, .CAM{ display: none !important; } 
+}
+
+
+
+.newThing {
+  position:absolute;
+  right: 40px;
+  bottom:calc(50vh - 250px);
+  display: none;
+  -webkit-animation: MM 12s infinite;
+}
+
+
+@media screen and (max-width: 886px) {
+
+
+  .A {
+    display: none;
+  }
+  .N {
+    display: none;
+  }
+  .D {
+    display: none;
+  }
+  .Y {
+    display: none;
+  }
+
+  .newThing {
+    display: block;
+  }
+  #scrollBox {
+    /*width: 1290px;*/
+    width:80vw;
+  }
+  .MM {
+    width:80vw;
+    object-fit: contain;
+  }
+
+
+  .CAM{
+    right:40px;
+    bottom:35px;}
+  .DOWN{
+    right:42px;
+    bottom:65px;
+
+  }
+  .UP{
+    right:42px;
+    bottom:90px;
+  }
+  }
+
+
+
+</style>
+</head>
+
+
+<body>
+<div id="scrollBox">
+<a href="file:///Users/art/Desktop/interactive2/final1/artwork1.html"><img src="mm.jpg" alt="mm" style="" class="MM" ></a>
+<a href="file:///Users/art/Desktop/interactive2/final1/artwork2.html"><img src="mm2.jpg" alt="mm" style="" class="MM"></a>
+<a href="file:///Users/art/Desktop/interactive2/final1/artwork3.html"><img src="mm3.jpg" alt="mm" style="" class="MM"></a>
+</div>
+<img src="a.png" alt="a"  class="A">
+<img src="n.png" alt="a" class="N">
+<img src="d.png" alt="a"  class="D">
+<img src="y.png" alt="a"  class="Y">
+<img src="cam.png" alt="a" style="height:20px" class="CAM" onclick="window.print()">
+<img src="up.png" alt="a" style="height:12px" class="UP">
+<img src="down.png" alt="a" style="height:12px" class="DOWN">
+
+<img src="smalltitle.png" alt="a" style="height:500px" class="newThing">
+
+<script>
+
+
+let upButton = document.querySelector('.UP')
+let downButton = document.querySelector('.DOWN')
+
+
+upButton.addEventListener('click',function(){
+  
+	scrollBox.scrollBy(0, -window.innerHeight)
+})
+
+downButton.addEventListener('click',function(){
+  
+	scrollBox.scrollBy(0, window.innerHeight)
+})
+
+
+
+</script>
+
+
+</body>
+</html>
